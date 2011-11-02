@@ -1,0 +1,9 @@
+<stack>
+  <description brief="rososc_tutorials">rososc_tutorials</description>
+  <author>Maintained by William Woodall</author>
+  <license>BSD</license>  
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/rososc_tutorials</url>
+  <depend stack="ros" />
+
+</stack>
