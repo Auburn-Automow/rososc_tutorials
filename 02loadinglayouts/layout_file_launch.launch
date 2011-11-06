@@ -1,0 +1,4 @@
+<launch>
+    <param name="layout_file" value="$(find rososc_tutorials)/layouts/ROS-Demo-iPad.touchosc "/>
+    <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
+</launch>
