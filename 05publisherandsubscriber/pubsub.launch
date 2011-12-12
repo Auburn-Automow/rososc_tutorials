@@ -1,5 +1,8 @@
 <launch>
-    <param name="layout_file" value="$(find rososc_tutorials)/layouts/slider-ipad.touchosc" />
+    <param name="layout_path" value="$(find rososc_tutorials)/layouts" />
+    <rosparam param="layouts">
+        [ "slider-ipad.touchosc", "slider-ipod.touchosc" ]
+    </rosparam>
 
     <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc" output="screen">
         <param name="osc_name" value="ROS OSC Default" />
@@ -12,6 +15,6 @@
         <param name="tabpage_sub" value="True" />
     </node>
 
-    <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
+    <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver" output="screen"/>
     <node pkg="rososc_tutorials" type="accelpub.py" name="accelpub"/>
 </launch>
