@@ -11,5 +11,6 @@
     <depend package="pytouchosc"/>
     <depend package="touchosc_bridge"/>
     <depend package="touchosc_msgs"/>
+    <depend package="diagnostic_msgs"/>
     <platform os="ubuntu" version="11.04"/>
 </package>
