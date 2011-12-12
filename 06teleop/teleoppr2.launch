@@ -1,7 +1,7 @@
 <launch>
     <param name="layout_path" value="$(find teleop_handler)/layouts" />
     <rosparam param="layouts">
-        [ "teleop-ipod.touchosc", "teleop-ipad.touchosc" ]
+        [ "teleop-ipod.touchosc" ]
     </rosparam>
 
     <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc" >
@@ -14,7 +14,7 @@
         <param name="vibrate" value="True" />
 
         <rosparam param="handlers">[teleop]</rosparam>
-        <rosparam command="load" file="$(find teleop_handler)/cfg/teleop.yaml"/>
+        <rosparam command="load" file="$(find rososc_tutorials)/06teleop/teleop.yaml"/>
         <remap from="cmd_vel" to="base_controller/command" />
     </node>
 

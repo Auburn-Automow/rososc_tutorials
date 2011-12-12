@@ -1,10 +1,10 @@
 <launch>
     <param name="layout_path" value="$(find teleop_handler)/layouts" />
     <rosparam param="layouts">
-        [ "teleop-ipod.touchosc", "teleop-ipad.touchosc" ]
+        [ "teleop-ipod.touchosc" ]
     </rosparam>
 
-    <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc" >
+    <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc" output="screen">
         <param name="osc_name" value="ROS OSC Default" />
         <param name="port" value="9000"/>
         <param name="print_fallback" value="True" />
@@ -14,7 +14,7 @@
         <param name="vibrate" value="True" />
 
         <rosparam param="handlers">[teleop]</rosparam>
-        <rosparam command="load" file="$(find teleop_handler)/cfg/teleop.yaml"/>
+        <rosparam command="load" file="$(find rososc_tutorials)/06teleop/teleop.yaml"/>
     </node>
 
     <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
