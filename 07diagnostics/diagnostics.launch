@@ -1,0 +1,21 @@
+<launch>
+    <node pkg="diagnostic_aggregator" type="aggregator_node" name="diagnostic_aggregator" output="screen">
+        <rosparam command="load" file="$(find rososc_tutorials)/07diagnostics/aggregator.yaml"/>
+    </node>
+    <node pkg="rososc_tutorials" type="dummydiagnosticsnode.py" name="dummydiagnostics"/>
+
+    <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc_bridge" output="screen">
+        <param name="osc_name" value="ROS Diagnostics"/>
+        <param name="port" value="10000" />
+        <param name="print_fallback" value="False"/>
+        <param name="load_default" value="False"/>
+        <rosparam param="handlers">[diagnostics]</rosparam>
+        <rosparam command="load" file="$(find diagnostics_handler)/cfg/diagnostics.yaml" />
+    </node>
+
+    <param name="layout_path" value="$(find diagnostics_handler)/layouts" />            
+    <rosparam param="layouts">
+        [ "diag-ipad-vertical.touchosc", "diag-ipod-vertical.touchosc" ]
+    </rosparam>   
+    <node pkg="pytouchosc" type="layoutserver_node" name="layoutserver"/>
+</launch>

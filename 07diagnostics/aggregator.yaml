@@ -1,0 +1,7 @@
+pub_rate: 1.0
+base_path: ''
+analyzers:
+  test:
+    type: diagnostic_aggregator/GenericAnalyzer
+    path: Test
+    startswith: 'Test'
