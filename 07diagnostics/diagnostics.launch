@@ -10,7 +10,7 @@
         <param name="print_fallback" value="False"/>
         <param name="load_default" value="False"/>
         <rosparam param="handlers">[diagnostics]</rosparam>
-        <rosparam command="load" file="$(find diagnostics_handler)/cfg/diagnostics.yaml" />
+        <rosparam command="load" file="$(find rososc_tutorials)/07diagnostics/diagnostics.yaml" />
     </node>
 
     <param name="layout_path" value="$(find diagnostics_handler)/layouts" />            

@@ -1,0 +1,7 @@
+# Handler specific information
+diagnostics:
+  # Required parameters
+  pkg: diagnostics_handler
+  class: 'diagnosticstabpage/DiagnosticsTabpageHandler'
+ 
+  start_topic: '/diagnostics'
