@@ -1,7 +1,7 @@
 <launch>
     <param name="layout_path" value="$(find rososc_tutorials)/layouts" />
     <rosparam param="layouts">
-        [ "slider-ipad.touchosc", "slider-ipod.touchosc" ]
+        [ "slider-ipad.touchosc" ]
     </rosparam>
 
     <node pkg="touchosc_bridge" type="touchosc_bridge.py" name="touchosc" output="screen">

@@ -26,10 +26,10 @@ class PubSub(object):
         self.accel_sub = rospy.Subscriber('/touchosc/accel',Imu,self.imu_cb)
         self.fader_pub = rospy.Publisher('/touchosc/1/multifader',MultiFader)
         
-        self.ringBuffer = RingBuffer(30)
+        self.ringBuffer = RingBuffer(50)
         
     def imu_cb(self, msg):
-        self.ringBuffer.append(float(msg.linear_acceleration.y)/20)
+        self.ringBuffer.append(float(msg.linear_acceleration.x)/5)
         newMsg = MultiFader()
         newMsg.values = self.ringBuffer.data
         self.fader_pub.publish(newMsg)
